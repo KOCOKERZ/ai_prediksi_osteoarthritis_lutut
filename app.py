@@ -39,16 +39,16 @@ def import_and_predict(image_data, model):
     return prediction
 
 # Load the trained model
-model = tf.keras.models.load_model('model.h5')
+model = tf.keras.models.load_model('/content/drive/MyDrive/UAS-AI/Knee-Dataset/model.h5')
 
 # Define the classes and their descriptions
-categories = ['Normal', 'Doubtful', 'Mid', 'Moderate', 'Severe']
+categories = ['Normal', 'Diragukan', 'Ringan', 'Sedang', 'Parah']
 descriptions = {
     'Normal': 'Lutut tampak normal tanpa tanda-tanda osteoartritis.',
-    'Doubtful': 'Ada tanda-tanda minor yang mungkin menunjukkan tahap awal osteoartritis.',
-    'Mid': 'Ada tanda-tanda ringan osteoartritis, dengan beberapa penyempitan ruang sendi.',
-    'Moderate': 'Ada tanda-tanda sedang osteoartritis, dengan penyempitan ruang sendi yang terlihat dan kemungkinan adanya taji tulang.',
-    'Severe': 'Ada tanda-tanda parah osteoartritis, dengan penyempitan ruang sendi yang signifikan dan taji tulang yang besar.'
+    'Diragukan': 'Ada tanda-tanda minor yang mungkin menunjukkan tahap awal osteoartritis.',
+    'Ringan': 'Ada tanda-tanda ringan osteoartritis, dengan beberapa penyempitan ruang sendi.',
+    'Sedang': 'Ada tanda-tanda sedang osteoartritis, dengan penyempitan ruang sendi yang terlihat dan kemungkinan adanya taji tulang.',
+    'Parah': 'Ada tanda-tanda parah osteoartritis, dengan penyempitan ruang sendi yang signifikan dan taji tulang yang besar.'
 }
 
 # Title and description
@@ -62,9 +62,10 @@ else:
     image = Image.open(file)
     st.image(image, caption='Gambar Terunggah', use_column_width=True)
     st.write("")
+    st.write("Memprediksi...")
     
     with st.spinner('Tunggu sebentar...'):
-        time.sleep(5)  # Simulate a delay
+        time.sleep(2)  # Simulate a delay
         predictions = import_and_predict(image, model)
         predicted_class = np.argmax(predictions)
 
