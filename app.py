@@ -39,7 +39,12 @@ def import_and_predict(image_data, model):
     return prediction
 
 # Load the trained model
-model = tf.keras.models.load_model('model.h5')
+@st.cache_resource
+def load_model():
+    model_path = 'model.h5'  # Sesuaikan path ini sesuai kebutuhan
+    return tf.keras.models.load_model(model_path)
+
+model = load_model()
 
 # Define the classes and their descriptions
 categories = ['Normal', 'Doubtful', 'Mild', 'Moderate', 'Severe']
