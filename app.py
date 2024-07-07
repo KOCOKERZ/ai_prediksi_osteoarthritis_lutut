@@ -39,7 +39,7 @@ def import_and_predict(image_data, model):
     return prediction
 
 # Load the trained model
-model = tf.keras.models.load_model('/content/drive/MyDrive/UAS-AI/Knee-Dataset/model.h5')
+model = tf.keras.models.load_model('model.h5')
 
 # Define the classes and their descriptions
 categories = ['Normal', 'Diragukan', 'Ringan', 'Sedang', 'Parah']
@@ -65,7 +65,7 @@ else:
     st.write("Memprediksi...")
     
     with st.spinner('Tunggu sebentar...'):
-        time.sleep(2)  # Simulate a delay
+        time.sleep(5)  # Simulate a delay
         predictions = import_and_predict(image, model)
         predicted_class = np.argmax(predictions)
 
