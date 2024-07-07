@@ -70,7 +70,7 @@ else:
     st.write("Memprediksi...")
     
     with st.spinner('Tunggu sebentar...'):
-        time.sleep(5)  # Simulate a delay
+        time.sleep(4)  # Simulate a delay
         predictions = import_and_predict(image, model)
         predicted_class = np.argmax(predictions)
 
