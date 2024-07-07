@@ -42,13 +42,13 @@ def import_and_predict(image_data, model):
 model = tf.keras.models.load_model('model.h5')
 
 # Define the classes and their descriptions
-categories = ['Normal', 'Diragukan', 'Ringan', 'Sedang', 'Parah']
+categories = ['Normal', 'Doubtful', 'Mild', 'Moderate', 'Severe']
 descriptions = {
     'Normal': 'Lutut tampak normal tanpa tanda-tanda osteoartritis.',
-    'Diragukan': 'Ada tanda-tanda minor yang mungkin menunjukkan tahap awal osteoartritis.',
-    'Ringan': 'Ada tanda-tanda ringan osteoartritis, dengan beberapa penyempitan ruang sendi.',
-    'Sedang': 'Ada tanda-tanda sedang osteoartritis, dengan penyempitan ruang sendi yang terlihat dan kemungkinan adanya taji tulang.',
-    'Parah': 'Ada tanda-tanda parah osteoartritis, dengan penyempitan ruang sendi yang signifikan dan taji tulang yang besar.'
+    'Doubtful': 'Ada tanda-tanda minor yang mungkin menunjukkan tahap awal osteoartritis.',
+    'Mild': 'Ada tanda-tanda ringan osteoartritis, dengan beberapa penyempitan ruang sendi.',
+    'Moderate': 'Ada tanda-tanda sedang osteoartritis, dengan penyempitan ruang sendi yang terlihat dan kemungkinan adanya taji tulang.',
+    'Severe': 'Ada tanda-tanda parah osteoartritis, dengan penyempitan ruang sendi yang signifikan dan taji tulang yang besar.'
 }
 
 # Title and description
